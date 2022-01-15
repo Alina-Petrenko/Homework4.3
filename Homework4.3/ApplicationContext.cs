@@ -38,6 +38,7 @@ namespace Homework4._3.Configurations
             modelBuilder.ApplyConfiguration(new CustomerConfiguration());
             modelBuilder.ApplyConfiguration(new PetConfiguration());
             modelBuilder.ApplyConfiguration(new ScheduleConfiguration());
+            modelBuilder.ApplyConfiguration(new ReceptionConfiguration());
         }
     }
 }

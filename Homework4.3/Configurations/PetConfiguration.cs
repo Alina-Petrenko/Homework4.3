@@ -12,14 +12,16 @@ namespace Homework4._3
     {
         public void Configure(EntityTypeBuilder<Pet> builder)
         {
+            builder   
+                .HasMany(c => c.Customers)
+                .WithMany(s => s.Pets)
+                .UsingEntity(j => j.ToTable("Reception"));
+
+
             builder
-                .HasKey(p => p.PetId);
-
-
-            //builder
-            //    .HasData(new List<Pet>()
-            //    {
-            //        new Pet() { Name = "Bonnie", Age = 3, CustomerId = new Customer { CustomerId = 1}, DoctorId = new Doctor {DoctorId = 1 } },
+                .HasData(new List<Pet>()
+                {
+                    new Pet() {PetId = 1, Name = "Bonnie", Age = 3, CustomerId = 1, DoctorId = 1 },
             ////        //new Pet() {PetId = 2, Name = "Chloe", Age = 10, CustomerId = new Customer { CustomerId = 2}, DoctorId = new Doctor {DoctorId = 2 } },
             ////        //new Pet() {PetId = 3, Name = "Tomas", Age = 14, CustomerId = new Customer { CustomerId = 2}, DoctorId = new Doctor {DoctorId = 2 } },
             ////        //new Pet() {PetId = 4, Name = "Locki", Age = 2, CustomerId = new Customer { CustomerId = 3}, DoctorId = new Doctor {DoctorId = 1 } },
@@ -27,7 +29,7 @@ namespace Homework4._3
             ////        //new Pet() {PetId = 6, Name = "Lily", Age = 3, CustomerId = new Customer { CustomerId = 5}, DoctorId = new Doctor {DoctorId = 3 } },
             ////        //new Pet() {PetId = 7, Name = "Jake", Age = 5, CustomerId = new Customer { CustomerId = 5}, DoctorId = new Doctor {DoctorId = 1 } },
 
-            //    });
+                });
         }
 
     }

@@ -15,13 +15,13 @@ namespace Homework4._3
             builder
                 .HasKey(p => p.DoctorId);
 
-            //    builder
-            //        .HasData(new List<Doctor>()
-            //        { 
-            //            new Doctor {  FirstName = "Alexandr", LastName = "Tetera", Speciality = "Veterynary" },
-            //            //new Doctor { DoctorId = 2, FirstName = "Dora", LastName = "Black", Speciality = "Laboratory" },
-            //            //new Doctor { DoctorId = 3, FirstName = "Mike", LastName = "Jeffertson", Speciality = "Assistant" }
-            //        });
+            builder
+                .HasData(new List<Doctor>()
+                {
+                                new Doctor {DoctorId = 1 ,  FirstName = "Alexandr", LastName = "Tetera", Speciality = "Veterynary" },
+                    //            //new Doctor { DoctorId = 2, FirstName = "Dora", LastName = "Black", Speciality = "Laboratory" },
+                    //            //new Doctor { DoctorId = 3, FirstName = "Mike", LastName = "Jeffertson", Speciality = "Assistant" }
+                });
 
         }
     }
