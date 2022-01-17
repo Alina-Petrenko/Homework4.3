@@ -12,7 +12,6 @@ namespace Homework4._3
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Email { get; set; }
-        //public List<Pet> Pets { get; set; } = new List<Pet>();
         public List<Reception> Receptions { get; set; } = new List<Reception>();
 
     }

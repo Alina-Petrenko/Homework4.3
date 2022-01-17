@@ -13,8 +13,6 @@ namespace Homework4._3
         public int Age { get; set; }
         public int DoctorId { get; set; }
         public Doctor Doctor { get; set; }
-        //public int CustomerId { get; set; }
-        public Customer Customer { get; set; }
         public List<Reception> Receptions { get; set; } = new List<Reception>();
     }
 }
