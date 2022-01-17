@@ -12,12 +12,7 @@ namespace Homework4._3
     {
         public void Configure(EntityTypeBuilder<Customer> builder)
         {
-            builder
-                .HasMany(c => c.Pets)
-                .WithMany(s => s.Customers)
-                .UsingEntity(j => j.ToTable("Reception")
-                );
-
+            
             builder
                 .HasData(new List<Customer>()
                 {

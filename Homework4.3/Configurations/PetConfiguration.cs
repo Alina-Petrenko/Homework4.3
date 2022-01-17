@@ -12,16 +12,11 @@ namespace Homework4._3
     {
         public void Configure(EntityTypeBuilder<Pet> builder)
         {
-            builder   
-                .HasMany(c => c.Customers)
-                .WithMany(s => s.Pets)
-                .UsingEntity(j => j.ToTable("Reception"));
-
 
             builder
                 .HasData(new List<Pet>()
                 {
-                    new Pet() {PetId = 1, Name = "Bonnie", Age = 3, CustomerId = 1, DoctorId = 1 },
+                    new Pet() {PetId = 1, Name = "Bonnie", Age = 3, DoctorId = 1 },
             ////        //new Pet() {PetId = 2, Name = "Chloe", Age = 10, CustomerId = new Customer { CustomerId = 2}, DoctorId = new Doctor {DoctorId = 2 } },
             ////        //new Pet() {PetId = 3, Name = "Tomas", Age = 14, CustomerId = new Customer { CustomerId = 2}, DoctorId = new Doctor {DoctorId = 2 } },
             ////        //new Pet() {PetId = 4, Name = "Locki", Age = 2, CustomerId = new Customer { CustomerId = 3}, DoctorId = new Doctor {DoctorId = 1 } },

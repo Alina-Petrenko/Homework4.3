@@ -12,12 +12,23 @@ namespace Homework4._3.Configurations
     {
         public void Configure(EntityTypeBuilder<Reception> builder)
         {
-            builder
-                .HasKey(k => k.Id);
+
+            builder.HasKey(s => new { s.CustomerId, s.PetId });
+
+            builder.HasOne(ss => ss.Pet)
+                .WithMany(s => s.Receptions)
+                .HasForeignKey(ss => ss.PetId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            builder.HasOne(ss => ss.Customer)
+                .WithMany(s => s.Receptions)
+                .HasForeignKey(ss => ss.CustomerId)
+                .OnDelete(DeleteBehavior.Cascade);
+
             builder
                 .HasData(new List<Reception>()
                 {
-                    new Reception() {PetId = 1, CustomerId = 1 },
+                    new Reception() {CustomerId = 1, PetId = 1},
                 });
         }
     }

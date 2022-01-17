@@ -8,7 +8,6 @@ namespace Homework4._3
 {
     class Reception
     {
-        public int Id { get; set; }
         public int PetId { get; set; }
         public Pet Pet { get; set; }
         public int CustomerId { get; set; }
